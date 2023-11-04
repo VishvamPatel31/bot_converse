@@ -1,0 +1,69 @@
+{% include 'layout.html' %}
+
+<style>
+  /* Custom CSS for layout enhancement */
+  .custom-container {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-h3 {
+    text-align: center;
+    color: #007bff;
+    font-weight: 600;
+  }
+
+  .custom-card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .custom-card-header {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .custom-btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+
+  .custom-btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .custom-textarea {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+</style>
+
+<div class="container mt-5 custom-container">
+  <h3 class="custom-h3">
+    Add input to generate images from a personal chatbot
+  </h3>
+  <form action="/image" method="POST">
+    <div>
+      <textarea class="form-control custom-textarea" placeholder="Add input here" name="user_input" rows="3"></textarea>
+      <button class="btn custom-btn-primary mt-3" type="submit">Send</button>
+    </div>
+  </form>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <div class="card custom-card">
+        <div class="card-header custom-card-header">
+          Image Generation
+        </div>
+        <div class="card-body text-center">
+          <img src="{{image_url}}" alt="Generated Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
